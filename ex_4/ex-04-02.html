@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quarter Flip</title>
+    </head>
+    <body>
+        <h2>Quarter Flip</h2>
+        <img id="myImage" src="head.jpg"><br>
+        <input type="button" value="Heads" id="heads">
+        <input type="button" value="Tails" id="tails">
+        <script>
+            function showHeads() {
+                document
+                    .getElementById("myImage")
+                    .src = "head.jpg";
+            }
+            function showTails() {
+                document
+                    .getElementById("myImage")
+                    .src = "tail.jpg";
+            }
+            document
+                .getElementById("heads")
+                .addEventListener("click", showHeads);
+            document
+                .getElementById("tails")
+                .addEventListener("click", showTails);
+        </script>
+    </body>
+</html>
+
