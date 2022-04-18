@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Great Circle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<!-- Load Leaflet from CDN -->
+       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+       <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+       
+    <!-- Load TurfJS from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
+   
+    <style>
+                    #container {
+                height: relative;
+                width: relative;
+                margin-top: auto;
+                margin-right: auto;
+                margin-bottom: auto;
+                margin-left: auto;}
+           #header{
+               background-color: #888888;
+               padding: 5px;
+               font-family: "Calibri", Helvetica, Corbel, Arial, sans-serif;
+               text-align: center;
+               color: aliceblue;
+           }
+           .button {
+               background-color: rgb(250, 44, 44); 
+               border: 1px solid white;
+               color: white;
+               text-align: center;
+               text-decoration: none;
+               display: inline-block;
+               font-size: 16px;
+               border-radius: 6px;
+               display: block;
+               width: 200px;
+               height: 50px;
+           }
+           #container #leftmenu{
+                position: static;
+                width: 220px;
+                top: 10px;
+                left: 50px;
+                padding: 10px 15px;
+                float: left;
+                height: 780px;
+                margin: 0;
+                font-size: 1em;
+                font-family: "Lora", serif;
+                letter-spacing: .04em;
+                background-color: rgb(255, 113, 113);
+                border: 1px solid grey;
+                border-radius: 3px;
+               
+           }
+          #splasher1{
+               background-color: white;
+               padding: 2px;
+               width: auto;
+               left: 20px;
+               margin-right: auto;
+               opacity: 0.7;
+               position: absolute;
+               top: 500px;
+           }
+           #splasher2{
+               background-color: white;
+               padding: 2px;
+               width: 210px;
+               left: 20px;
+               margin-left: auto;
+               margin-right: auto;
+               opacity: 0.7;
+               position: absolute;
+               top: 350px;
+               display: block;
+           }
+           #container #map{
+               height: 800px;
+               position: relative;
+           }
+    </style>
+</head>
+<body>
+       <div id= "container">
+       <div id = "header">
+       <h1> Lab 10: Client-side Processing With Turf.js</h1> 
+       </div>
+           <div id="leftmenu">
+           </div>
+            <div id= "splasher1" class="hidden">
+            </div>
+            <div id= "splasher2" class="hidden">
+               <h3>About the map</h3>
+                <p>This map shows a great circle with two draggable endpoints and a midpoint between them.</p>
+            </div>
+    <div id="map"></div>
+    <script>
+   
+// Initialize map
+var map = L.map("map").setView([40, -85], 4);
+       
+L.tileLayer(
+    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+    {attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}
+).addTo(map);
+
+// Set layers
+var pnt_layer = L.layerGroup().addTo(map);
+var gc_layer = L.geoJSON().addTo(map);
+var midpoint = L.geoJSON().addTo(map);
+// Draw points
+L.marker([41.92842185748263, -72.09377291575954], {draggable: true}).on("drag", drawGC).addTo(pnt_layer);
+L.marker([54.398923877111585, -2.3145248928687403], {draggable: true}).on("drag", drawGC).addTo(pnt_layer);
+
+// Function to draw Great Circle line
+function drawGC() {
+    gc_layer.clearLayers();
+    midpoint.clearLayers();
+    points = pnt_layer.toGeoJSON();
+    var gc = turf.greatCircle(points.features[0], points.features[1]);
+    var mp = turf.midpoint(points.features[0], points.features[1]);
+    L.geoJSON(gc).addTo(gc_layer);
+    L.geoJSON(mp).addTo(midpoint);
+
+}
+drawGC();
+
+    </script>
+</body>
+</html>
