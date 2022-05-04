@@ -1,4 +1,4 @@
-var BurjPopup = "Burj Khalifa<br/>Location: Dubai, United Arab Emirates</br>Height: 828m/2,171ft</br><img src='https://upload.wikimedia.org/wikipedia/commons/7/7f/Dubai_Skylines_Alex_Azabache_%28Pexels_3214995%29.jpg' width='200px'/>";
+var BurjPopup = "Burj Khalifa<br/>Location: Dubai, United Arab Emirates</br>Height: 828m/2,722ft</br><img src='https://upload.wikimedia.org/wikipedia/commons/7/7f/Dubai_Skylines_Alex_Azabache_%28Pexels_3214995%29.jpg' width='200px'/>";
 
 var MerdekaPopup = "Merdeka 118<br/>Location: Kuala Lumpur, Malaysia</br>Height: 678.9m/2,227ft</br><img src='https://upload.wikimedia.org/wikipedia/commons/d/dd/Merdeka_118_on_March_13_2022.jpg' width='200px'/>";
 
@@ -58,27 +58,87 @@ var HangzhouPopup = "Hangzhou<br/>Location: China</br>GDP: >$280 Billion<img src
 
 var SeoulPopup = "Seoul<br/>Location: South Korea</br>GDP: >$384 Billion<img src='https://upload.wikimedia.org/wikipedia/commons/0/0e/Seul_montaje.png', width='200px'/>";
 
-
 var customOptions ={'maxWidth': '200px','className' : 'custom'};
+
+var myIcon1 = L.icon({
+    iconUrl: 'images/tower.png',
+    iconSize: [105, 105],
+});
+var myIcon2 = L.icon({
+    iconUrl: 'images/tower.png',
+    iconSize: [85, 85],
+});
+var myIcon3 = L.icon({
+    iconUrl: 'images/tower.png',
+    iconSize: [80, 80],
+});
+var myIcon4 = L.icon({
+    iconUrl: 'images/tower.png',
+    iconSize: [75, 75],
+});
+var myIcon5 = L.icon({
+    iconUrl: 'images/tower.png',
+    iconSize: [60, 60],
+});
+var myIcon6 = L.icon({
+    iconUrl: 'images/tower.png',
+    iconSize: [70, 70],
+});
+var myIcon7 = L.icon({
+    iconUrl: 'images/tower.png',
+    iconSize: [65, 65],
+});
+var myIcon8 = L.icon({
+    iconUrl: 'images/tower.png',
+    iconSize: [65, 65],
+});
+var myIcon9 = L.icon({
+    iconUrl: 'images/tower.png',
+    iconSize: [55, 55],
+});
+var myIcon10 = L.icon({
+    iconUrl: 'images/tower.png',
+    iconSize: [60, 60],
+});
+var myIcon11 = L.icon({
+    iconUrl: 'images/tower.png',
+    iconSize: [50, 50],
+});
+var myIcon12 = L.icon({
+    iconUrl: 'images/tower.png',
+    iconSize: [45, 45],
+});
+var myIcon13 = L.icon({
+    iconUrl: 'images/tower.png',
+    iconSize: [40, 40],
+});
+var myIcon14 = L.icon({
+    iconUrl: 'images/tower.png',
+    iconSize: [50, 50],
+});
+var myIcon15 = L.icon({
+    iconUrl: 'images/tower.png',
+    iconSize: [45, 45],
+});
 
 
 var skyscrapers = L.layerGroup();
 
-var Burj = L.marker([25.1972, 55.2744]).bindPopup(BurjPopup, customOptions).addTo(skyscrapers);
-var Merdeka = L.marker([3.1418, 101.7006]).bindPopup(MerdekaPopup, customOptions).addTo(skyscrapers);
-var Shanghai = L.marker([31.2335, 121.5056]).bindPopup(ShanghaiPopup, customOptions).addTo(skyscrapers);
-var Makkah = L.marker([21.4193, 39.8254]).bindPopup(MakkahPopup, customOptions).addTo(skyscrapers);
-var Goldin = L.marker([39.0914, 117.0903]).bindPopup(GoldinPopup, customOptions).addTo(skyscrapers);
-var Pingan = L.marker([22.5331, 114.0559]).bindPopup(PinganPopup, customOptions).addTo(skyscrapers);
-var Lotte = L.marker([37.5137, 127.1052]).bindPopup(LottePopup, customOptions).addTo(skyscrapers);
-var Oneworld = L.marker([40.71304636003342, -74.01323722798244]).bindPopup(OneworldPopup, customOptions).addTo(skyscrapers);
-var Tianjin = L.marker([39.0217, 117.6981]).bindPopup(TianjinPopup, customOptions).addTo(skyscrapers);
-var Gaungzhou = L.marker([23.1176, 113.3259]).bindPopup(GaungzhouPopup, customOptions).addTo(skyscrapers);
-var Chinazun = L.marker([39.9115, 116.4602]).bindPopup(ChinazunPopup, customOptions).addTo(skyscrapers);
-var Taipei = L.marker([25.0338, 121.5646]).bindPopup(TaipeiPopup, customOptions).addTo(skyscrapers);
-var Shanghaiworld = L.marker([31.2344, 121.5078]).bindPopup(ShanghaiworldPopup, customOptions).addTo(skyscrapers);
-var International = L.marker([22.3034, 114.1602]).bindPopup(InternationalPopup, customOptions).addTo(skyscrapers);
-var Centralpark = L.marker([40.76664685311965, -73.9808926055083]).bindPopup(CentralparkPopup, customOptions).addTo(skyscrapers);
+var Burj = L.marker([25.1972, 55.2744], {icon: myIcon1}).bindPopup(BurjPopup, customOptions).addTo(skyscrapers);
+var Merdeka = L.marker([3.1418, 101.7006], {icon: myIcon2}).bindPopup(MerdekaPopup, customOptions).addTo(skyscrapers);
+var Shanghai = L.marker([31.2335, 121.5056], {icon: myIcon3}).bindPopup(ShanghaiPopup, customOptions).addTo(skyscrapers);
+var Makkah = L.marker([21.4193, 39.8254], {icon: myIcon4}).bindPopup(MakkahPopup, customOptions).addTo(skyscrapers);
+var Goldin = L.marker([39.0914, 117.0903], {icon: myIcon5}).bindPopup(GoldinPopup, customOptions).addTo(skyscrapers);
+var Pingan = L.marker([22.5331, 114.0559], {icon: myIcon6}).bindPopup(PinganPopup, customOptions).addTo(skyscrapers);
+var Lotte = L.marker([37.5137, 127.1052], {icon: myIcon7}).bindPopup(LottePopup, customOptions).addTo(skyscrapers);
+var Oneworld = L.marker([40.71304636003342, -74.01323722798244], {icon: myIcon8}).bindPopup(OneworldPopup, customOptions).addTo(skyscrapers);
+var Tianjin = L.marker([39.0217, 117.6981], {icon: myIcon9}).bindPopup(TianjinPopup, customOptions).addTo(skyscrapers);
+var Gaungzhou = L.marker([23.1176, 113.3259], {icon: myIcon10}).bindPopup(GaungzhouPopup, customOptions).addTo(skyscrapers);
+var Chinazun = L.marker([39.9115, 116.4602], {icon: myIcon11}).bindPopup(ChinazunPopup, customOptions).addTo(skyscrapers);
+var Taipei = L.marker([25.0338, 121.5646], {icon: myIcon12}).bindPopup(TaipeiPopup, customOptions).addTo(skyscrapers);
+var Shanghaiworld = L.marker([31.2344, 121.5078], {icon: myIcon13}).bindPopup(ShanghaiworldPopup, customOptions).addTo(skyscrapers);
+var International = L.marker([22.3034, 114.1602], {icon: myIcon14}).bindPopup(InternationalPopup, customOptions).addTo(skyscrapers);
+var Centralpark = L.marker([40.76664685311965, -73.9808926055083], {icon: myIcon15}).bindPopup(CentralparkPopup, customOptions).addTo(skyscrapers);
 
 var wealth = L.layerGroup();
 
@@ -111,6 +171,63 @@ coords = [
     [25.0338, 121.5646],
 ];
 
+function getRadius(area) {
+  var radius = Math.sqrt(area/Math.PI);
+  return radius * 10;
+}
+
+var propcircles = new L.geoJson(gdpB, {
+    onEachFeature: function(feature, featureLayer){
+        featureLayer.bindPopup('<p>Location: <b>'+feature.properties.Location+ '</b></br>' +
+			       'GDP (Hundreds of Billions USD): '+feature.properties.GDP__Billions_of_USD_+'</p>');
+    },
+    pointToLayer: function(feature, latlng) {
+      return L.circleMarker(latlng, {
+          fillColor: "#920101", 
+          color: '#920101',
+          weight: 2,       
+          radius: getRadius(feature.properties.GDP__Billions_of_USD_),
+          fillOpacity: .35
+      }).on({
+            mouseover: function(e) {
+                this.openPopup();
+                this.setStyle({fillOpacity: .8, fillColor: '#2D8F4E'});
+
+            },
+            mouseout: function(e) {
+                this.closePopup();
+                this.setStyle({fillOpacity: .35, fillColor: '#920101'});  
+            }
+    });
+  }
+});
+var propcircles1 = new L.geoJson(gdpT, {
+    onEachFeature: function(feature, featureLayer){
+        featureLayer.bindPopup('<p>Location: <b>'+feature.properties.Location+ '</b></br>' +
+			       'GDP (Trillions of USD): '+feature.properties.GDP__Trillions_of_USD_+'</p>');
+    },
+    pointToLayer: function(feature, latlng) {
+      return L.circleMarker(latlng, {
+          fillColor: "#920101", 
+          color: '#920101',
+          weight: 2,       
+          radius: getRadius(feature.properties.GDP__Trillions_of_USD_),
+          fillOpacity: .35
+      }).on({
+            mouseover: function(e) {
+                this.openPopup();
+                this.setStyle({fillOpacity: .8, fillColor: '#2D8F4E'});
+
+            },
+            mouseout: function(e) {
+                this.closePopup();
+                this.setStyle({fillOpacity: .35, fillColor: '#920101'});  
+            }
+    });
+  }
+});
+
+
 var streets = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2NoYXVkaHVyaSIsImEiOiJjazBtcG5odG8wMDltM2JtcjdnYTgyanBnIn0.qwqjMomdrBMG36GQKXBlMw', {
     maxZoom: 18,
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
@@ -141,7 +258,6 @@ var mymap = L.map("map", {
     layers: [streets, skyscrapers]});
 
 var line = L.polyline(coords, {color: "purple", weight: 2});
-line.addTo(mymap);
 
 var baseLayers = {
     'Streets': streets,
@@ -149,7 +265,7 @@ var baseLayers = {
     "Hillshade": topo,
 	};
 
-var overlays = {'Skyscrapers': skyscrapers, 'Wealth': wealth, 'Ten Tallest': line};
+var overlays = {'Skyscrapers': skyscrapers, 'GDP Billions': propcircles, 'GDP Trillions': propcircles1};
 
 var layerControl = L.control.layers(baseLayers, overlays, {collapsed: false}).addTo(mymap);
 
