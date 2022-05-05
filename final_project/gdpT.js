@@ -1,0 +1,3 @@
+var gdpT = [
+{"type":"FeatureCollection","features":[{"type":"Feature","id":1,"geometry":{"type":"Point","coordinates":[-73.992410261999964,40.713437833000057]},"properties":{"OBJECTID":1,"Location":"New York City","Longitude":-73.992410262208494,"Latitude":40.713437833163098,"GDP__Trillions_of_USD_":1.5}},{"type":"Feature","id":2,"geometry":{"type":"Point","coordinates":[139.6503,35.6762]},"properties":{"OBJECTID":2,"Location":"Tokyo","Longitude":139.6503,"Latitude":35.6762,"GDP__Trillions_of_USD_":1}}]}
+]
